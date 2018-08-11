@@ -8,4 +8,8 @@ exports["showIntImpl"] = [](const boxed& n) -> boxed {
     return std::to_string(unbox<int>(n));
 };
 
+exports["showStringImpl"] = [](const boxed& s) -> boxed {
+    return "\"" + unbox<string>(s) + "\"";
+};
+
 FOREIGN_END;
