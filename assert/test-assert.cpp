@@ -4,7 +4,7 @@
 
 FOREIGN_BEGIN( Test_Assert )
 
-exports["assertʹ"] = [](const boxed& message) -> boxed {
+exports["assert'"] = [](const boxed& message) -> boxed {
     return [=](const boxed& success_) -> boxed {
         const auto success = unbox<bool>(success_);
         return [=]() -> boxed {

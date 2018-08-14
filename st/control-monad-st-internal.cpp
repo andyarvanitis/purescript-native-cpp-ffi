@@ -47,7 +47,7 @@ exports["read"] = [](const boxed& ref) -> boxed {
     };
 };
 
-exports["modifyʹ"] = [](const boxed& f) -> boxed {
+exports["modify'"] = [](const boxed& f) -> boxed {
   return [=](const boxed& ref) -> boxed {
     return [=]() -> boxed {
       boxed t = f(ref["value"]);
