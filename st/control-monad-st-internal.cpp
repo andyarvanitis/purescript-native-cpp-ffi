@@ -24,7 +24,7 @@ exports["run"] = [](const boxed& f) -> boxed {
     return f();
 };
 
-exports["while_"] = [](const boxed& f) -> boxed {
+exports["while"] = [](const boxed& f) -> boxed {
     return [=](const boxed& a) -> boxed {
         return [=]() -> boxed {
             while (unbox<bool>(f())) {
@@ -35,7 +35,7 @@ exports["while_"] = [](const boxed& f) -> boxed {
     };
 };
 
-exports["new_"] = [](const boxed& val) -> boxed {
+exports["new"] = [](const boxed& val) -> boxed {
     return [=]() -> boxed {
         return dict_t{{ "value", val }};
     };
