@@ -16,4 +16,20 @@ exports["showStringImpl"] = [](const boxed& s) -> boxed {
     return "\"" + unbox<string>(s) + "\"";
 };
 
+exports["showArrayImpl"] = [](const boxed& f) -> boxed {
+    return [=](const boxed& xs_) -> boxed {
+    const auto& xs = unbox<array_t>(xs_);
+    string s("[");
+    auto count = xs.size();
+    for (auto it = xs.cbegin(), end = xs.cend(); it != end; it++) {
+        s.append(unbox<string>(f(*it)));
+        if (--count > 0) {
+          s.push_back(',');
+        }
+    }
+    s.push_back(']');
+    return s;
+    };
+};
+
 FOREIGN_END;
