@@ -1,3 +1,4 @@
+#include <iostream>
 #include "purescript.h"
 
 // Tested with package v4.1.0
