@@ -1,3 +1,5 @@
+#include <limits>
+#include <cassert>
 #include "purescript.h"
 
 // Tested with package v5.0.0
