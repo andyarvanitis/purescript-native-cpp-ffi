@@ -1,4 +1,5 @@
 #include <cmath>
+#include <algorithm>
 #include "purescript.h"
 
 // Tested with package v4.0.0

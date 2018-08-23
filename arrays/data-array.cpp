@@ -1,5 +1,6 @@
 #include <limits>
 #include <cassert>
+#include <algorithm>
 #include "purescript.h"
 
 // Tested with package v5.0.0
@@ -21,7 +22,7 @@ exports["range"] = [](const boxed& start_) -> boxed {
 };
 
 exports["length"] = [](const boxed& xs) -> boxed {
-    const auto len = unbox<array_t>(xs).size();
+    const long long len = unbox<array_t>(xs).size();
     assert(len <= std::numeric_limits<int>::max());
     return static_cast<int>(len);
 };
@@ -32,7 +33,7 @@ exports["slice"] = [](const boxed& start_) -> boxed {
         const auto end = unbox<int>(end_);
         return [=](const boxed& xs_) -> boxed {
             const auto& xs = unbox<array_t>(xs_);
-            const auto size = xs.size();
+            const long long size = xs.size();
             assert(size <= std::numeric_limits<decltype(start)>::max());
             const auto length = static_cast<decltype(start)>(size);
             const auto _start = std::min(start, length);
