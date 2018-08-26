@@ -14,4 +14,4 @@ exports["assert'"] = [](const boxed& message) -> boxed {
     };
 };
 
-FOREIGN_END;
+FOREIGN_END

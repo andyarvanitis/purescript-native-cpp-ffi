@@ -28,4 +28,4 @@ exports["ordNumberImpl"]  = ordImpl<double>;
 exports["ordStringImpl"]  = ordImpl<string>;
 exports["ordCharImpl"]    = ordImpl<string>;
 
-FOREIGN_END;
+FOREIGN_END

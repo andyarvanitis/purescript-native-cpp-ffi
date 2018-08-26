@@ -22,4 +22,4 @@ exports["boolNot"] = [](const boxed& b) -> boxed {
     return !unbox<bool>(b);
 };
 
-FOREIGN_END;
+FOREIGN_END

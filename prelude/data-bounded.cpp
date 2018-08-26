@@ -14,4 +14,4 @@ exports["bottomChar"] = 0;
 exports["topNumber"] = std::numeric_limits<double>::max();
 exports["bottomNumber"] = std::numeric_limits<double>::min();
 
-FOREIGN_END;
+FOREIGN_END

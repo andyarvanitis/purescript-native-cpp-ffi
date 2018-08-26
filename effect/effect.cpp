@@ -18,4 +18,4 @@ exports["bindE"] = [](const boxed& a) -> boxed {
     };
 };
 
-FOREIGN_END;
+FOREIGN_END

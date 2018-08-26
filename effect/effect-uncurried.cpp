@@ -216,4 +216,4 @@ exports["runEffectFn10"] = [](const boxed& fn) -> boxed {
     };
 };
 
-FOREIGN_END;
+FOREIGN_END

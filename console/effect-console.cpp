@@ -19,4 +19,4 @@ exports["warn"] = [](const boxed& s) -> boxed {
     };
 };
 
-FOREIGN_END;
+FOREIGN_END

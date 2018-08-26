@@ -36,4 +36,4 @@ exports["write"] =  [](const boxed& val) -> boxed {
   };
 };
 
-FOREIGN_END;
+FOREIGN_END

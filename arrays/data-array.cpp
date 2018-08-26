@@ -49,4 +49,4 @@ exports["unsafeIndexImpl"] = [](const boxed& xs) -> boxed {
     };
 };
 
-FOREIGN_END;
+FOREIGN_END

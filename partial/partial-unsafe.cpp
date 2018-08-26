@@ -8,4 +8,4 @@ exports["unsafePartial"] = [](const boxed& f) -> boxed {
     return f(nullptr);
 };
 
-FOREIGN_END;
+FOREIGN_END

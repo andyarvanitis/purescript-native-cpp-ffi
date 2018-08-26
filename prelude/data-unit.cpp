@@ -6,4 +6,4 @@ FOREIGN_BEGIN( Data_Unit )
 
 exports["unit"] = nullptr;
 
-FOREIGN_END;
+FOREIGN_END

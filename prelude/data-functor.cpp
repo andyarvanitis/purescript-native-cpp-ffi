@@ -16,4 +16,4 @@ exports["arrayMap"] = [](const boxed& f) -> boxed {
     };
 };
 
-FOREIGN_END;
+FOREIGN_END
