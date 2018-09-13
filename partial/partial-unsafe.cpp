@@ -5,7 +5,7 @@
 FOREIGN_BEGIN( Partial_Unsafe )
 
 exports["unsafePartial"] = [](const boxed& f) -> boxed {
-    return f(nullptr);
+    return f(boxed());
 };
 
 FOREIGN_END

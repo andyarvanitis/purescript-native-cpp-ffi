@@ -9,7 +9,7 @@ exports["assert'"] = [](const boxed& message) -> boxed {
         const auto success = unbox<bool>(success_);
         return [=]() -> boxed {
             if (!success) throw std::runtime_error(unbox<string>(message));
-            return nullptr;
+            return boxed();
         };
     };
 };

@@ -30,7 +30,7 @@ exports["while"] = [](const boxed& f) -> boxed {
             while (unbox<bool>(f())) {
               a();
             }
-            return nullptr;
+            return boxed();
         };
     };
 };

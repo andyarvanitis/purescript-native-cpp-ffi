@@ -7,7 +7,7 @@ FOREIGN_BEGIN( Data_Function_Uncurried )
 
 exports["mkFn0"] = [](const boxed& f) -> boxed {
     return [=]() -> boxed {
-        return f(nullptr);
+        return f(boxed());
     };
 };
 

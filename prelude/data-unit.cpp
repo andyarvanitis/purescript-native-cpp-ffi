@@ -4,6 +4,6 @@
 
 FOREIGN_BEGIN( Data_Unit )
 
-exports["unit"] = nullptr;
+exports["unit"] = boxed();
 
 FOREIGN_END
