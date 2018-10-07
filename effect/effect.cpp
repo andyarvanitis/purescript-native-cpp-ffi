@@ -18,4 +18,16 @@ exports["bindE"] = [](const boxed& a) -> boxed {
     };
 };
 
+exports["foreachE"] = [](const boxed& as_) -> boxed {
+    return [=](const boxed& f) -> boxed {
+        return [=]() -> boxed {
+            const auto& as = unbox<array_t>(as_);
+            for (auto it = as.cbegin(), end = as.cend(); it != end ; it++) {
+                f(*it)();
+            }
+            return boxed();
+        };
+    };
+};
+
 FOREIGN_END

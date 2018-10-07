@@ -12,5 +12,13 @@ exports["intSub"] = [](const boxed& x_) -> boxed {
     };
 };
 
+exports["numSub"] = [](const boxed& x_) -> boxed {
+    const auto x = unbox<double>(x_);
+    return [=](const boxed& y_) -> boxed {
+        const auto y = unbox<double>(y_);
+        return x - y;
+    };
+};
+
 
 FOREIGN_END
