@@ -1,4 +1,5 @@
 #include <cmath>
+#include <cassert>
 #include <limits>
 #include "purescript.h"
 
