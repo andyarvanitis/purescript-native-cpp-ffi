@@ -43,6 +43,18 @@ exports["slice"] = [](const boxed& start_) -> boxed {
     };
 };
 
+exports["indexImpl"] = [](const boxed& just) -> boxed {
+    return [=](const boxed& nothing) -> boxed {
+        return [=](const boxed& xs_) -> boxed {
+            return [=](const boxed& i_) -> boxed {
+                const auto& xs = unbox<array_t>(xs_);
+                const auto i = unbox<int>(i_);
+                return i < 0 || i >= xs.size() ? nothing : just(xs[i]);
+            };
+        };
+    };
+};
+
 exports["unsafeIndexImpl"] = [](const boxed& xs) -> boxed {
     return [=](const boxed& n) -> boxed {
         return unbox<array_t>(xs)[unbox<int>(n)];
