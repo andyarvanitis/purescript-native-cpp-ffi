@@ -34,10 +34,10 @@ static auto concat2(const boxed& xs) -> boxed {
 
 static auto go(const long bot,
                const long top,
-               const fn_t& apply,
-               const fn_t& map,
-               const fn_t& pure,
-               const fn_t& f,
+               const boxed& apply,
+               const boxed& map,
+               const boxed& pure,
+               const boxed& f,
                const array_t& array) -> boxed {
   switch (top - bot) {
     case 0: return pure(array_t{});
@@ -62,10 +62,10 @@ exports["traverseArrayImpl"] = [](const boxed& apply) -> boxed {
                   const auto& array = unbox<array_t>(array_);
                   return go(0,
                             array.size(),
-                            unbox<fn_t>(apply),
-                            unbox<fn_t>(map),
-                            unbox<fn_t>(pure),
-                            unbox<fn_t>(f),
+                            apply,
+                            map,
+                            pure,
+                            f,
                             array);
                 };
             };
