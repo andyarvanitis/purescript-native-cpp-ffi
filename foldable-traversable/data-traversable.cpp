@@ -10,14 +10,14 @@ static auto array1(const boxed& a) -> boxed {
 }
 
 static auto array2(const boxed& a) -> boxed {
-  return [=](const boxed& b) {
+  return [=](const boxed& b) -> boxed {
     return array_t{ a, b };
   };
 }
 
 static auto array3(const boxed& a) -> boxed {
-  return [=](const boxed& b) {
-    return [=](const boxed& c) {
+  return [=](const boxed& b) -> boxed {
+    return [=](const boxed& c) -> boxed {
       return array_t{ a, b, c };
     };
   };
