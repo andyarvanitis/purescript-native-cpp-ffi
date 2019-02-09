@@ -21,10 +21,39 @@ exports["range"] = [](const boxed& start_) -> boxed {
     };
 };
 
+exports["replicate"] = [](const boxed& count_) -> boxed {
+    const auto count = unbox<int>(count_);
+    return [=](const boxed& value) -> boxed {
+        return array_t(count < 0 ? 0 : count, value);
+    };
+};
+
 exports["length"] = [](const boxed& xs) -> boxed {
     const long long len = unbox<array_t>(xs).size();
     assert(len <= std::numeric_limits<int>::max());
     return static_cast<int>(len);
+};
+
+exports["cons"] = [](const boxed& e) -> boxed {
+    return [=](const boxed& l_) -> boxed {
+        const auto& l = unbox<array_t>(l_);
+        array_t result;
+        result.reserve(l.size() + 1);
+        result.insert(result.cend(), e);
+        result.insert(result.cend(), l.cbegin(), l.cend());
+        return result;
+    };
+};
+
+exports["snoc"] = [](const boxed& l_) -> boxed {
+    return [=](const boxed& e) -> boxed {
+        const auto& l = unbox<array_t>(l_);
+        array_t result;
+        result.reserve(l.size() + 1);
+        result.insert(result.cend(), l.cbegin(), l.cend());
+        result.insert(result.cend(), e);
+        return result;
+    };
 };
 
 exports["slice"] = [](const boxed& start_) -> boxed {
