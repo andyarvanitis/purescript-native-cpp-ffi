@@ -24,8 +24,16 @@ exports["eqNumberImpl"] = [](const boxed& x_) -> boxed {
     const auto x = unbox<double>(x_);
     return [=](const boxed& y_) -> boxed {
         const auto y = unbox<double>(y_);
-        return std::abs(x-y) <= std::numeric_limits<double>::epsilon() * std::abs(x+y) ||
-               std::abs(x-y) < std::numeric_limits<double>::min();
+        if (x == y) {
+            return true;
+        }
+        if (std::isfinite(x) && std::isfinite(y)) {
+            const auto diff = std::abs(x-y);
+            return diff <= std::numeric_limits<double>::epsilon() * std::abs(x+y) ||
+                   diff < std::numeric_limits<double>::min();
+        } else {
+            return false;
+        }
     };
 };
 
