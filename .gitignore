@@ -3,4 +3,5 @@
 *.o
 *.bak
 .vscode
+.DS_Store
 
